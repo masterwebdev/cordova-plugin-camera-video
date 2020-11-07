@@ -7,7 +7,7 @@
 #import <CoreImage/CoreImage.h>
 #import <ImageIO/ImageIO.h>
 
-#import "CameraSessionManager.h"
+#import "VideoSessionManager.h"
 
 @protocol TakePictureDelegate
 - (void) invokeTakePicture;
@@ -20,7 +20,7 @@
 - (void) invokeTapToFocus:(CGPoint)point;
 @end;
 
-@interface CameraRenderController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, OnFocusDelegate> {
+@interface VideoRenderController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, OnFocusDelegate> {
   GLuint _renderBuffer;
   CVOpenGLESTextureCacheRef _videoTextureCache;
   CVOpenGLESTextureRef _lumaTexture;
@@ -37,7 +37,7 @@
 - (void) newVideoSample:(CMSampleBufferRef)sampleBuffer;
 - (CMSampleBufferRef)offsetTimmingWithSampleBufferForVideo:(CMSampleBufferRef)sampleBuffer;
 
-@property (nonatomic) CameraSessionManager *sessionManager;
+@property (nonatomic) VideoSessionManager *sessionManager;
 @property (nonatomic) CIContext *ciContext;
 @property (nonatomic) CIImage *latestFrame;
 @property (nonatomic) EAGLContext *context;

@@ -2,8 +2,8 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVInvokedUrlCommand.h>
 
-#import "CameraSessionManager.h"
-#import "CameraRenderController.h"
+#import "VideoSessionManager.h"
+#import "VideoRenderController.h"
 
 @interface CameraVideo : CDVPlugin <TakePictureDelegate, FocusDelegate>
 
@@ -48,8 +48,8 @@
 - (void) stopRecord:(CDVInvokedUrlCommand*)command;
 - (void) stopRecordFinished;
 
-@property (nonatomic) CameraSessionManager *sessionManager;
-@property (nonatomic) CameraRenderController *cameraRenderController;
+@property (nonatomic) VideoSessionManager *sessionManager;
+@property (nonatomic) VideoRenderController *cameraRenderController;
 @property (nonatomic) NSString *onPictureTakenHandlerId;
 @property (nonatomic) BOOL storeToFile;
 

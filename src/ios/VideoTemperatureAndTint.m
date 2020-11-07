@@ -1,6 +1,6 @@
-#include "TemperatureAndTint.h"
+#include "VideoTemperatureAndTint.h"
 
-@implementation TemperatureAndTint
+@implementation VideoTemperatureAndTint
 @synthesize mode;
 @synthesize minTemperature;
 @synthesize maxTemperature;

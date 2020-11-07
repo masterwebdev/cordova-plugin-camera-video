@@ -1,8 +1,8 @@
-#include "CameraSessionManager.h"
+#include "VideoSessionManager.h"
 
-@implementation CameraSessionManager
+@implementation VideoSessionManager
 
-- (CameraSessionManager *)init {
+- (VideoSessionManager *)init {
   if (self = [super init]) {
     // Create the AVCaptureSession
     self.session = [[AVCaptureSession alloc] init];
@@ -17,43 +17,43 @@
     }
     self.filterLock = [[NSLock alloc] init];
 
-    TemperatureAndTint * wbIncandescent = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbIncandescent = [[VideoTemperatureAndTint alloc] init];
     wbIncandescent.mode = @"incandescent";
     wbIncandescent.minTemperature = 2200;
     wbIncandescent.maxTemperature = 3200;
     wbIncandescent.tint = 0;
 
-    TemperatureAndTint * wbCloudyDaylight = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbCloudyDaylight = [[VideoTemperatureAndTint alloc] init];
     wbCloudyDaylight.mode = @"cloudy-daylight";
     wbCloudyDaylight.minTemperature = 6000;
     wbCloudyDaylight.maxTemperature = 7000;
     wbCloudyDaylight.tint = 0;
 
-    TemperatureAndTint * wbDaylight = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbDaylight = [[VideoTemperatureAndTint alloc] init];
     wbDaylight.mode = @"daylight";
     wbDaylight.minTemperature = 5500;
     wbDaylight.maxTemperature = 5800;
     wbDaylight.tint = 0;
 
-    TemperatureAndTint * wbFluorescent = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbFluorescent = [[VideoTemperatureAndTint alloc] init];
     wbFluorescent.mode = @"fluorescent";
     wbFluorescent.minTemperature = 3300;
     wbFluorescent.maxTemperature = 3800;
     wbFluorescent.tint = 0;
 
-    TemperatureAndTint * wbShade = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbShade = [[VideoTemperatureAndTint alloc] init];
     wbShade.mode = @"shade";
     wbShade.minTemperature = 7000;
     wbShade.maxTemperature = 8000;
     wbShade.tint = 0;
 
-    TemperatureAndTint * wbWarmFluorescent = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbWarmFluorescent = [[VideoTemperatureAndTint alloc] init];
     wbWarmFluorescent.mode = @"warm-fluorescent";
     wbWarmFluorescent.minTemperature = 3000;
     wbWarmFluorescent.maxTemperature = 3000;
     wbWarmFluorescent.tint = 0;
 
-    TemperatureAndTint * wbTwilight = [[TemperatureAndTint alloc] init];
+    VideoTemperatureAndTint * wbTwilight = [[VideoTemperatureAndTint alloc] init];
     wbTwilight.mode = @"twilight";
     wbTwilight.minTemperature = 4000;
     wbTwilight.maxTemperature = 4400;
@@ -607,7 +607,7 @@
   };
 
   NSEnumerator *enumerator = [self.colorTemperatures objectEnumerator];
-  TemperatureAndTint * wbTemperature;
+  VideoTemperatureAndTint * wbTemperature;
   while (wbTemperature =[ enumerator nextObject]) {
     AVCaptureWhiteBalanceTemperatureAndTintValues temperatureAndTintValues;
     temperatureAndTintValues.temperature = (wbTemperature.minTemperature + wbTemperature.maxTemperature) / 2;
@@ -686,7 +686,7 @@
     };
   } else {
       NSLog(@"Additional modes for %@", whiteBalanceMode);
-      TemperatureAndTint * temperatureForWhiteBalanceSetting = [self.colorTemperatures objectForKey:whiteBalanceMode];
+      VideoTemperatureAndTint * temperatureForWhiteBalanceSetting = [self.colorTemperatures objectForKey:whiteBalanceMode];
       if (temperatureForWhiteBalanceSetting != nil) {
         AVCaptureWhiteBalanceTemperatureAndTintValues temperatureAndTintValues;
         temperatureAndTintValues.temperature = (temperatureForWhiteBalanceSetting.minTemperature + temperatureForWhiteBalanceSetting.maxTemperature) / 2;

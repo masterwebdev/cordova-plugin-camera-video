@@ -55,14 +55,14 @@
     <header-file src="src/ios/CameraVideo.h" />
     <source-file src="src/ios/CameraVideo.m" />
 
-     <header-file src="src/ios/TemperatureAndTint.h" />
-    <source-file src="src/ios/TemperatureAndTint.m" />
+     <header-file src="src/ios/VideoTemperatureAndTint.h" />
+    <source-file src="src/ios/VideoTemperatureAndTint.m" />
 
-    <header-file src="src/ios/CameraSessionManager.h" />
-    <source-file src="src/ios/CameraSessionManager.m" />
+    <header-file src="src/ios/VideoSessionManager.h" />
+    <source-file src="src/ios/VideoSessionManager.m" />
 
-    <header-file src="src/ios/CameraRenderController.h" />
-    <source-file src="src/ios/CameraRenderController.m" />
+    <header-file src="src/ios/VideoRenderController.h" />
+    <source-file src="src/ios/VideoRenderController.m" />
 
     <framework src="ImageIO.framework" weak="true" />
     <framework src="MobileCoreServices.framework" />

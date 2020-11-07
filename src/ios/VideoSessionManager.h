@@ -1,14 +1,14 @@
 #import <CoreImage/CoreImage.h>
 #import <AVFoundation/AVFoundation.h>
-#import "TemperatureAndTint.h"
+#import "VideoTemperatureAndTint.h"
 
 @protocol OnFocusDelegate
 - (void) onFocus;
 @end;
 
-@interface CameraSessionManager : NSObject
+@interface VideoSessionManager : NSObject
 
-- (CameraSessionManager *)init;
+- (VideoSessionManager *)init;
 - (NSArray *) getDeviceFormats;
 - (NSArray *) getFocusModes;
 - (NSString *) getFocusMode;

@@ -43,10 +43,10 @@
     self.storeToFile = (BOOL) [command.arguments[11] boolValue];
 
     // Create the session manager
-    self.sessionManager = [[CameraSessionManager alloc] init];
+    self.sessionManager = [[VideoSessionManager alloc] init];
 
     // render controller setup
-    self.cameraRenderController = [[CameraRenderController alloc] init];
+    self.cameraRenderController = [[VideoRenderController alloc] init];
     self.cameraRenderController.dragEnabled = dragEnabled;
     self.cameraRenderController.tapToTakePicture = tapToTakePicture;
     self.cameraRenderController.tapToFocus = tapToFocus;
