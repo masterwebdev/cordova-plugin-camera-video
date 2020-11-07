@@ -1,1 +1,1 @@
-# cordova-plugin-camera-video
+# Cordova Plugin Camera Video
