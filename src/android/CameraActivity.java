@@ -137,7 +137,7 @@ public class CameraActivity extends Fragment {
     appResourcesPackage = getActivity().getPackageName();
 
     // Inflate the layout for this fragment
-    view = inflater.inflate(getResources().getIdentifier("camera_activity", "layout", appResourcesPackage), container, false);
+    view = inflater.inflate(getResources().getIdentifier("camera_video_activity", "layout", appResourcesPackage), container, false);
     createCameraVideo();
     return view;
   }
