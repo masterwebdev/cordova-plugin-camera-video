@@ -698,7 +698,7 @@ public class CameraActivity extends Fragment {
     }
   }
 
-  public void startRecord(final String filePath, final String camera, final int width, final int height, final int quality, final boolean withFlash){
+  public void startRecordP(final String filePath, final String camera, final int width, final int height, final int quality, final boolean withFlash){
     Log.d(TAG, "CameraVideo startRecord camera: " + camera + " width: " + width + ", height: " + height + ", quality: " + quality);
     Activity activity = getActivity();
     muteStream(true, activity);
@@ -800,7 +800,7 @@ public class CameraActivity extends Fragment {
     return orientation;
   }
 
-  public void stopRecord() {
+  public void stopRecordP() {
     Log.d(TAG, "stopRecord");
     try {
       mRecorder.stop();

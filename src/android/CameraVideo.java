@@ -456,7 +456,7 @@ public class CameraVideo extends CordovaPlugin implements CameraActivity.CameraV
      cordova.getThreadPool().execute(new Runnable() {
       @Override
       public void run() {
-        fragment.startRecord(getFilePath(filename), camera, width, height, quality, withFlash);
+        fragment.startRecordP(getFilePath(filename), camera, width, height, quality, withFlash);
       }
     });
 
